@@ -1,0 +1,2 @@
+<?php 
+//universal error page
