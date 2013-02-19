@@ -68,12 +68,14 @@ class page{
 			'parts' => explode('/', $this->parsed_url['path']),
 			'basename' => basename($this->parsed_url['path'])
 		);
-		if(empty($this->parsed_url['path']['basename'])){
+		if(!stripos($this->parsed_url['path']['basename'], '.php')){
 			$this->parsed_url['path']['basename'] = 'index.php'; // all index files should be php
+			$this->parsed_url['path']['full'] = $this->parsed_url['path']['full'].$this->parsed_url['path']['basename'];
+			$this->parsed_url['path']['parts'][] = $this->parsed_url['path']['basename'];
 		}
 		foreach ($this->parsed_url['path']['parts'] as $key => $value) {
 			// remove empty values
-			if(!empty($value)){
+			if(empty($value)==FALSE){
 				if(!isset($temp)){
 					$temp = array();
 				}
@@ -84,6 +86,11 @@ class page{
 			// reset this array if browsing the top index file for this domain
 			unset($this->parsed_url['path']['parts']);
 			$this->parsed_url['path']['parts'] = array($this->parsed_url['path']['basename']);
+			$this->parsed_url['path']['full'] = DS.$this->parsed_url['path']['basename'];
+		}
+		else{
+			$this->parsed_url['path']['parts'] = $temp;
+			unset($temp);
 		}
 		
 		
@@ -97,7 +104,7 @@ class page{
 			include_once $this->theme_path.DS.'config.php';
 		}
 		if(empty($this->theme_lib_path)){
-			$this->theme_lib_path = $this->theme_path.DS.'lib';
+			$this->theme_lib_path   = $this->theme_path.DS.'lib';
 		}
 		if(empty($this->theme_pages_path)){
 			$this->theme_pages_path = $this->theme_path.DS.'pages';
@@ -110,6 +117,7 @@ class page{
 		if ($this->is_subdomain()){
 			if(empty($this->theme_sub_path)==TRUE){
 				$this->theme_pages_path = $this->theme_pages_path.DS.'sub'.DS.$this->sub;
+				$this->theme_sub_path = $this->theme_pages_path;
 			}
 			$this->subdomain($this->sub) or
 				exit('Could not properly load the scripts for this subdomain');
@@ -132,30 +140,25 @@ class page{
 		// return?
 	}
 	public function is_subdomain(){
-		static $has_run;
-		static $return;
-		if($has_run){
-			return $return;
-		}
 		// IF TRUE set $sub to $string ELSE set to NULL
 		$array = explode(".",$_SERVER['HTTP_HOST']);
-		if(array_shift($array)=='projectcleverweb'){
-			$this->sub = array_shift(explode(".",$_SERVER['HTTP_HOST']));
-			$return = TRUE;
+		$sub = $array[0];
+		if($sub!='projectcleverweb'){
+			$this->sub = $sub;
+			return TRUE;
 		}
-		$return = FALSE;
-		return $return;
+		return FALSE;
 	}
 	public function subdomain($name = NULL){
 		// Add the subdoamin specific elements to the loading script
 		$name = (empty($name))? $this->sub : $name;
 		
 		switch ($name) {
-			case 'docs':
+			case 'new':
 				switch (FALSE) {
 					// lib's should load their indvidual dependencies, not this script.
-					case $this->add_script($this->scripts_path.DS.'docs-lib.php','sub-docs-lib'):
-					case $this->add_script($this->sub_lib_path.DS.'codex-lib.php','script-codex-lib'):
+					case $this->add_script($this->sub_lib_path.DS.'docs-lib.php','sub-docs-lib'):
+					case $this->add_script($this->scripts_path.DS.'codex-lib.php','script-codex-lib'):
 					// case $this->add_script($path[, $key]):
 						return FALSE;
 					default:
@@ -183,9 +186,9 @@ class page{
 	}
 	public function get_page_abspath(){
 		// if page does not exist send to error page
-		if(file_exists($this->theme_pages_path.DS.$this->parsed_url['path']['full'])){
+		if(file_exists($this->theme_pages_path.$this->parsed_url['path']['full'])){
 			$this->page_relpath = ltrim($this->parsed_url['path']['full'],'/\\');
-			return $this->theme_pages_path.DS.$this->parsed_url['path']['full'];
+			return $this->theme_pages_path.$this->parsed_url['path']['full'];
 		}
 		else{
 			if(strpos($this->theme_error_path, $this->theme_path)){
@@ -216,13 +219,14 @@ class page{
 				// to allow it.
 				exit('Double script load error with key: '.$key);
 			}
-			if(!file_exists($this->scripts_path.DS.$value)){
+			if(!file_exists($value)){
 				trigger_error('Requested script "'.$value.'" does not exist! Key: '.$key.EOL,E_USER_WARNING);
 				// trigger exit() after final script attempts to load
 				$err++;
 			}
 			else{
-				include_once $this->scripts_path.DS.$value;
+				$this->loaded_scripts[$key] = $value;
+				include_once $value;
 			}
 		}
 		if($err>0){
