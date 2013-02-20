@@ -45,6 +45,9 @@ class page{
 			// send to error page with error #
 		}*/
 		$this->setinfo();
+		
+		$this->add_script($this->scripts_path.DS.'license-lib.php','script-license-lib');
+		
 		// build the page
 		return $this->build();
 		
@@ -61,8 +64,9 @@ class page{
 		}
 		$this->parsed_url = parse_url($_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 		if(!empty($this->parsed_url['query'])){
-			$this->parsed_url['query'] = parse_str($this->parsed_url['query']);
+			parse_str($this->parsed_url['query'],$this->parsed_url['query']);
 		}
+		$this->parsed_url['full'] = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 		$this->parsed_url['path'] = array(
 			'full' => $this->parsed_url['path'],
 			'parts' => explode('/', $this->parsed_url['path']),
@@ -121,9 +125,6 @@ class page{
 			}
 			$this->subdomain($this->sub) or
 				exit('Could not properly load the scripts for this subdomain');
-		}
-		else{
-			$this->theme_pages_path = $this->theme_sub_path;
 		}
 		
 		
@@ -191,12 +192,12 @@ class page{
 			return $this->theme_pages_path.$this->parsed_url['path']['full'];
 		}
 		else{
-			if(strpos($this->theme_error_path, $this->theme_path)){
-				$this->page_relpath = ltrim(str_ireplace($this->theme_path, '', $this->theme_error_path),'/\\');
+			if(stripos($this->theme_error_path, $this->theme_path)!==FALSE){
+				$this->page_relpath = '..'.DS.ltrim(str_ireplace($this->theme_path, '', $this->theme_error_path),'/\\');
 			}
 			else{
 				// when the error path is not in the theme dir leave a message.
-				// exit('Something is fishy with the theme error page path: '.$this->theme_error_path); // needs debugging [comeback]
+				exit('Something is fishy with the theme error page path: '.$this->theme_error_path); // needs debugging [comeback]
 			}
 			return $this->theme_error_path;
 		}
