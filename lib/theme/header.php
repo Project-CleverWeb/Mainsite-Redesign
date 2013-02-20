@@ -90,7 +90,7 @@
 				</table>
 			</header>
 			
-			<span class="test gradient_red">
+			<span class="test button gradient_diag_red">
 				Bla bla bla bla bla bla
 			</span>
 			
