@@ -98,7 +98,7 @@ h5{
 h6{
 	font-size: 20px;
 }
-a, a:active, a:focus a:hover{
+a, a:active, a:focus, a:hover{
 	text-decoration: none;
 }
 a, a:active{
@@ -128,10 +128,10 @@ p{
 
 
 footer{
-	width: 500px;
+	width: 1100px;
 	position: relative;
 	left:50%;
-	margin: 50px 0px 10px -250px;
+	margin: 50px 0px 10px -550px;
 }
 header{
 	width: 100%;
@@ -153,10 +153,10 @@ header{
 }
 
 #page-container{
-	width:500px;
+	width:1100px;
 	position:relative;
 	left:50%;
-	margin-left: -250px;
+	margin-left: -550px;
 }
 
 .button{
