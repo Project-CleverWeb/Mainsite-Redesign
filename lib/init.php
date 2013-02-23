@@ -46,6 +46,7 @@ class page{
 		}*/
 		$this->setinfo();
 		
+		// test load a random script
 		$this->add_script($this->scripts_path.DS.'license-lib.php','script-license-lib');
 		
 		// build the page
