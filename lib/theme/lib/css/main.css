@@ -64,6 +64,9 @@ body{
 pre, code{
 	font-family: 'Droid Sans Mono', sans-serif;
 }
+pre{
+	width:700px;
+}
 h1,h2,h3,h4,h5,h6{
 	font-family: 'Roboto', sans-serif;
 	margin:10px 5px 10px 0px;

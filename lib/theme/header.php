@@ -119,29 +119,25 @@
 				
 				
 				
-				<pre class="radcorn gradient_horz_white gradient">
-					<code>
-	&lt;?php
-	$path = &quot;/YOUR/PATH/TO/public_html/php_diary/data&quot;;
-	$filename = &quot;122499.dat&quot;;
-	$x= -1;
-	  if($file = fopen(&quot;$path/$filename&quot;, &quot;r&quot;))
-	  {
-	    while(!feof($file))
-	    {
-	      $therate = fgetss($file, 255);
-	      $x++;
-	      $count = $count + $therate;
-	    }
-	    fclose($file);
-	  }
-	$average = ($count / $x);
-	print(&quot;Surfer Average Rating for 12/24/99: &quot;);
-	printf(&quot;%.2f&quot;, $average);
-	print(&quot;&lt;br&gt;Total Surfer Votes: $x&quot;);
-	?&gt;
-					</code>
-				</pre>
+				<pre class="radcorn gradient_horz_white gradient"><code>&lt;?php
+$path = &quot;/YOUR/PATH/TO/public_html/php_diary/data&quot;;
+$filename = &quot;122499.dat&quot;;
+$x= -1;
+  if($file = fopen(&quot;$path/$filename&quot;, &quot;r&quot;))
+  {
+    while(!feof($file))
+    {
+      $therate = fgetss($file, 255);
+      $x++;
+      $count = $count + $therate;
+    }
+    fclose($file);
+  }
+$average = ($count / $x);
+print(&quot;Surfer Average Rating for 12/24/99: &quot;);
+printf(&quot;%.2f&quot;, $average);
+print(&quot;&lt;br&gt;Total Surfer Votes: $x&quot;);
+?&gt;</code></pre>
 				
 				
 				
