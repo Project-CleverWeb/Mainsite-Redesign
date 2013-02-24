@@ -75,7 +75,7 @@
 		<script>hljs.initHighlightingOnLoad();</script>
 	</head>
 	<body>
-		<div class"gradient_split_diag_grey gradient" id="page-wrapper">
+		<div class="gradient_split_diag_white gradient" id="page-wrapper">
 			<div id="page-container">
 				<header class="header gradient_split_diag_grey gradient" role="banner">
 					<table>
@@ -119,7 +119,7 @@
 				
 				
 				
-				<pre>
+				<pre class="radcorn gradient_horz_white gradient">
 					<code>
 	&lt;?php
 	$path = &quot;/YOUR/PATH/TO/public_html/php_diary/data&quot;;
@@ -148,30 +148,98 @@
 				
 				
 				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
-					class="tridem radcorn flip gradient_grey gradient">
+					class="tridem_light radcorn flip gradient_grey gradient">
 						Button</span>
 				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
-					class="tridem radcorn flip gradient_horz_grey gradient">
+					class="tridem_light radcorn flip gradient_horz_grey gradient">
 						Button</span>
 				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
-					class="tridem radcorn flip gradient_diag_grey gradient">
+					class="tridem_light radcorn flip gradient_diag_grey gradient">
 						Button</span>
 				<br />
 				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
-					class="tridem radcorn flip gradient_split_grey gradient">
+					class="tridem_light radcorn flip gradient_split_grey gradient">
 						Button</span>
 				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
-					class="tridem radcorn flip gradient_split_horz_grey gradient">
+					class="tridem_light radcorn flip gradient_split_horz_grey gradient">
 						Button</span>
 				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
-					class="tridem radcorn flip gradient_split_diag_grey gradient">
+					class="tridem_light radcorn flip gradient_split_diag_grey gradient">
 						Button</span>
+				<br />
+				<br />
 				
 				
-				
-				
-				
-				
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_diag_red gradient">
+						Button</span>
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_split_diag_red gradient">
+						Button</span>
+				<br />
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_diag_blue gradient">
+						Button</span>
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_split_diag_blue gradient">
+						Button</span>
+				<br />
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_diag_purple gradient">
+						Button</span>
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_split_diag_purple gradient">
+						Button</span>
+				<br />
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_diag_orange gradient">
+						Button</span>
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_split_diag_orange gradient">
+						Button</span>
+				<br />
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_diag_green gradient">
+						Button</span>
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_split_diag_green gradient">
+						Button</span>
+				<br />
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_diag_pink gradient">
+						Button</span>
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_split_diag_pink gradient">
+						Button</span>
+				<br />
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_diag_brown gradient">
+						Button</span>
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_split_diag_brown gradient">
+						Button</span>
+				<br />
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_diag_black gradient">
+						Button</span>
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_split_diag_black gradient">
+						Button</span>
+				<br />
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_diag_white gradient">
+						Button</span>
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_split_diag_white gradient">
+						Button</span>
+				<br />
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_diag_grey gradient">
+						Button</span>
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_split_diag_grey gradient">
+						Button</span>
+				<br />
 				
 				
 				
