@@ -1,6 +1,5 @@
 /**
  * This file presets some commonly used colors and border styles
- * Using this css page alone adds the possiblitly for about 2200 class name combonations
  *
  * FEATURES
  * > Gradients by default go from top to bottom, other options are: diag, horz (eg gradient_horz_red)
@@ -13,6 +12,138 @@
  * > Gradients can have a split in the middle that has one side slighlty darker than the other (eg gradientr_split_diag_blue)
  * > I got tired of writing these so look at the css for the rest =P
  */
+
+
+
+/*** Glass ***/
+.glassbg{
+margin: 10px;
+border: 1px solid rgba(0,0,0,0.5);
+padding:7px;
+background: rgba(50,50,50,0.20);
+box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+-o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+-webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+-moz-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+}
+
+.glassbg_rounded{
+margin: 10px;
+border: 1px solid rgba(0,0,0,0.5);
+padding:7px;
+border-radius: 7px;
+background: rgba(50,50,50,0.20);
+box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+-o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+-webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+-moz-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(255,255,255,0.3), inset 0 10px rgba(255,255,255,0.2), inset 0 10px 20px rgba(255,255,255,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+}
+
+/* reverse glass (this class lightens background elements rather than darkening) */
+/* beta testing this to try and make it look better */
+.glassbg_rev{
+margin: 10px;
+border: 1px solid rgba(0,0,0,0.5);
+padding:7px;
+background: rgba(250,250,250,0.20);
+box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(185,185,185,0.3), inset 0 10px rgba(185,185,185,0.2), inset 0 10px 20px rgba(185,185,185,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+-o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(185,185,185,0.3), inset 0 10px rgba(185,185,185,0.2), inset 0 10px 20px rgba(185,185,185,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+-webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(185,185,185,0.3), inset 0 10px rgba(185,185,185,0.2), inset 0 10px 20px rgba(185,185,185,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+-moz-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(185,185,185,0.3), inset 0 10px rgba(185,185,185,0.2), inset 0 10px 20px rgba(185,185,185,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+}
+
+.glassbg_rev_rounded{
+margin: 10px;
+border: 1px solid rgba(0,0,0,0.5);
+padding:7px;
+border-radius: 7px;
+background: rgba(250,250,250,0.20);
+box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(185,185,185,0.3), inset 0 10px rgba(185,185,185,0.2), inset 0 10px 20px rgba(185,185,185,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+-o-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(185,185,185,0.3), inset 0 10px rgba(185,185,185,0.2), inset 0 10px 20px rgba(185,185,185,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+-webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(185,185,185,0.3), inset 0 10px rgba(185,185,185,0.2), inset 0 10px 20px rgba(185,185,185,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+-moz-box-shadow: 0 2px 6px rgba(0,0,0,0.5), inset 0 1px rgba(185,185,185,0.3), inset 0 10px rgba(185,185,185,0.2), inset 0 10px 20px rgba(185,185,185,0.25), inset 0 -15px 30px rgba(0,0,0,0.3);
+}
+
+
+/*** Lines BG ***/
+
+.linesbg{
+background: url();
+}
+.linesbg_horz{
+background: url();
+}
+.linesbg_diag{
+background: url();
+}
+
+/* light */
+.linesbg_light{
+background: url();
+}
+.linesbg_horz_light{
+background: url();
+}
+.linesbg_diag_light{
+background: url();
+}
+
+/* dark */
+.linesbg_dark{
+background: url();
+}
+.linesbg_horz_dark{
+background: url();
+}
+.linesbg_diag_dark{
+background: url();
+}
+
+/* brick */
+.linesbg_brick{
+background: url();
+}
+.linesbg_horz_brick{
+background: url();
+}
+.linesbg_diag_brick{
+background: url();
+}
+
+
+/*** Space Invaders! (background) ***/
+
+spaceinvaders_classic{ /* white on black */
+background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAVklEQVQYV42QgQoAIQhDt///aGuSMaOOEwJZb9YkgJgHEQGSane5ppsEC3bQjRuU+1YFJ1jQEilBvesNvI6cokzN/QqTofyZT/BMXfC5rrae1x+l/wYHxBNA+zsQipQAAAAASUVORK5CYII=);
+}
+spaceinvaders_red{ /* red on white */
+background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAUklEQVQYV42QwQ0AIAgDyzruP4vraEqsAZVEP2A9GqlhnQ6MBpjurFG7HiIYBzfI6QipF+ygIIpVn8CXIzUauIOcqmXI/INVHGdcKZ7qj9S/wQkd2yO13iHaCwAAAABJRU5ErkJggg==);
+}
+spaceinvaders_orange{ /* orange on white */
+background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAU0lEQVQYV2NkgIIreQz/dSYxMML4IBpZDEMCWSGyRrhCkG5kRTA2TDFYIUwRSBAXG0UhNhNBYiADwCbATMLlGZAa4hXiCg704EIJHlxuBIkTrRAA3KU0jSgaOUUAAAAASUVORK5CYII=);
+}
+spaceinvaders_yellow{ /* yellow on white */
+background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAU0lEQVQYV2NkgIIzZzj+m5j8YITxQTSyGIYEskJkjXCFIN3IimBsmGKwQpgikCAuNopCbCaCxEAGgE2AmYTLMyA1xCvEFRzowYUSPLjcCBInWiEAc+xFSS6OUYAAAAAASUVORK5CYII=);
+}
+spaceinvaders_green{ /* green on white */
+background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAU0lEQVQYV2NkgALmKRz//+b8YITxQTSyGIYEskJkjXCFIN3IimBsmGKwQpgikCAuNopCbCaCxEAGgE2AmYTLMyA1xCvEFRzowYUSPLjcCBInWiEAw49DRy4ZD+QAAAAASUVORK5CYII=);
+}
+spaceinvaders_blue{ /* blue on white */
+background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAUklEQVQYV2NkgAHu2/8ZvqoywvkgBpIYpgSySiSNCIUg3dgAVDFEIUwRSBAHG1UhViOBgkADICbATMLlGaAaEhQiW4ccRGjBhRo8uNwIFCdaIQAfGzPVVBM1ugAAAABJRU5ErkJggg==);
+}
+spaceinvaders_pink{ /* pink on white */
+background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAU0lEQVQYV2NkgIJrLOf/a/0xZITxQTSyGIYEskJkjXCFIN3IimBsmGKwQpgikCAuNopCbCaCxEAGgE2AmYTLMyA1xCvEFRzowYUSPLjcCBInWiEAgYdFW/VwsMoAAAAASUVORK5CYII=);
+}
+spaceinvaders_purple{ /* purple on white */
+background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAU0lEQVQYV2NkgIIJLNf+F/zRYoTxQTSyGIYEskJkjXCFIN3IimBsmGKwQpgikCAuNopCbCaCxEAGgE2AmYTLMyA1xCvEFRzowYUSPLjcCBInWiEAF1pE3SfUcCwAAAAASUVORK5CYII=);
+}
+spaceinvaders_brown{ /* brown on white */
+background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAU0lEQVQYV2NkgIJiT43/vdtvMML4IBpZDEMCWSGyRrhCkG5kRTA2TDFYIUwRSBAXG0UhNhNBYiADwCbATMLlGZAa4hXiCg704EIJHlxuBIkTrRAAN99D0eQvNaQAAAAASUVORK5CYII=);
+}
+spaceinvaders_black{ /* black on white */
+background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAATElEQVQYV5WQwQ4AMARD+f+PtllS66QOc1nxNMPtRmzplKesmmowW30Gc1rFYQACylzqDg6m5nDgl2EsE1+gcnhOw8tMf6t6v+M4sACboRIJ37becwAAAABJRU5ErkJggg==);
+}
+
 
 /*** Corner Rounding (aka corner radius) ***/
 .radcorn{
@@ -66,7 +197,7 @@ border-top-left-radius: 30px;
 }
 
 
-/*** 3D effects ***/
+/*** 3D effects (shadows) ***/
 
 
 .tridem{
@@ -105,7 +236,7 @@ box-shadow: 0 3px 14px black, inset 0 13px 13px 1px #ffffff;
 }
 
 
-/*** Gradients ***/
+/*** Gradients (background only) ***/
 
 
 /**

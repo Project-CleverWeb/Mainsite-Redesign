@@ -1,6 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 	<html itemscope itemtype="http://schema.org/Organization" xmlns="http://www.w3.org/1999/xhtml">
 	<head>
+		<!--make sure IE works properly-->
+		<!--[if lt IE 9]>
+			<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8">
+		<![endif]-->
+		
+		
 		<title>Project CleverWeb</title>
 		
 		<!-- Disable compatibility mode option in Internet Explorer.
@@ -50,34 +56,44 @@
 		<link rel="stylesheet" type="text/css" href="./lib/theme/lib/css/highlight.js.github.css">
 		<link rel="stylesheet" type="text/css" href="./lib/theme/lib/css/colors.css" />
 		
-		<!-- Internet Explorer -->
-		<!--[if IE]><link rel="stylesheet" type="text/css" href="./lib/theme/lib/css/ie.css" /><![endif]-->
+		<!-- Internet Explorer w/o Google Chrom Frame -->
+		<!-- get as much support as possible, will still look off in areas for 8 or less -->
+		<!--[if IE]>
+			<link rel="stylesheet" type="text/css" href="./lib/theme/lib/css/ie.css" />
+		<![endif]-->
 		<!--[if lt IE 9]>
-		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 		<![endif]-->
 		<!--[if gte IE 9]>
 			<style type="text/css">
 				.gradient {
-					 filter: none;
+					filter: none;
 				}
 			</style>
 		<![endif]-->
 		<!--[if lte IE 9]>
-		<script src="./lib/theme/lib/js/curvycorners/jquery.curvycorners.min.js"></script>
+			<style type="text/css">
+				.gradient {
+					behavior: url(./lib/theme/lib/other/PIE.php);
+				}
+			</style>
 		<![endif]-->
 		
 		<!-- JS -->
-		<script type="text/javascript" src="//code.jquery.com/jquery-1.7.2.min.js"></script>
 		<script type="text/javascript" src="//apis.google.com/js/plusone.js"></script>
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script type="text/javascript" src="./lib/theme/lib/js/highlight.js/highlight.pack.js"></script>
-		<script>hljs.initHighlightingOnLoad();</script>
+		
+		<!-- Older versions of IE dont like the highlighter so leave it out then -->
+		<!--[if !gte IE 9]> -->
+			<script type="text/javascript" src="./lib/theme/lib/js/highlight.js/highlight.pack.js"></script>
+			<script>hljs.initHighlightingOnLoad();</script>
+		<!--<![endif]-->
 	</head>
 	<body>
-		<div class="gradient_split_diag_white gradient" id="page-wrapper">
+		<div id="page-wrapper">
 			<div id="page-container">
-				<header class="header gradient_split_diag_grey gradient" role="banner">
+				<header class="header" role="banner">
 					<table>
 						<tr>
 							<td style="text-align: left;">
@@ -99,13 +115,32 @@
 					</table>
 				</header>
 				
+				<div id="page-content">
+					
+				
+				
 				<h1>The Header <a href="#">#</a> 1</h1>
 				<h2>The Header <a href="#">#</a> 2</h2>
 				<h3>The Header <a href="#">#</a> 3</h3>
 				<h4>The Header <a href="#">#</a> 4</h4>
 				<h5>The Header <a href="#">#</a> 5</h5>
 				<h6>The Header <a href="#">#</a> 6</h6>
-				
+				<form action="" method="post">
+					Name: <input type="text" name="name" placeholder="John Doe" value="" maxlength="50" /><br />
+					Email: <input type="text" name="email" value="" placeholder="me@example.com" maxlength="50" /><br />
+					Message: 
+					<textarea name="msg">
+						
+					</textarea>
+					<br />
+					<input type="radio" name="rdChoice" value="Mag3" checked/>
+						Magazine 3
+					<input type="radio" name="rdChoice" value="Mag4" />
+						Magazine 4
+					<br />
+					<input type="checkbox" name="chk" value="" checked/> Check Me!<br />
+					<div class="align_r"><input type="submit" value="Submit This Form"></div>
+				</form>
 				
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam aliquam diam in urna aliquet tincidunt. Nam euismod placerat mi. In hac habitasse platea dictumst. Phasellus eu semper enim. Nam ante quam, vulputate eget dictum sed, ullamcorper sed quam. Nullam eu quam risus, auctor facilisis lectus. Cras sagittis mauris id turpis suscipit at luctus sem gravida. Vestibulum euismod volutpat enim. Vestibulum magna erat, <a href="#">This Link bla bla bla</a> dignissim quis varius in, vulputate eu dolor. Sed sit amet nisl urna. Nam pulvinar ligula eu sem lacinia sit amet scelerisque enim porta. Ut vulputate vulputate augue, at vulputate dui vulputate a. Nullam dictum, arcu in accumsan fringilla, justo massa tincidunt sapien, eget mattis nibh ligula vel eros. Vivamus interdum vestibulum convallis. Aliquam ut tortor in tortor ultricies rhoncus.</p>
 
@@ -123,16 +158,16 @@
 $path = &quot;/YOUR/PATH/TO/public_html/php_diary/data&quot;;
 $filename = &quot;122499.dat&quot;;
 $x= -1;
-  if($file = fopen(&quot;$path/$filename&quot;, &quot;r&quot;))
-  {
-    while(!feof($file))
-    {
-      $therate = fgetss($file, 255);
-      $x++;
-      $count = $count + $therate;
-    }
-    fclose($file);
-  }
+	if($file = fopen(&quot;$path/$filename&quot;, &quot;r&quot;))
+	{
+		while(!feof($file))
+		{
+			$therate = fgetss($file, 255);
+			$x++;
+			$count = $count + $therate;
+		}
+		fclose($file);
+	}
 $average = ($count / $x);
 print(&quot;Surfer Average Rating for 12/24/99: &quot;);
 printf(&quot;%.2f&quot;, $average);
@@ -178,6 +213,13 @@ print(&quot;&lt;br&gt;Total Surfer Votes: $x&quot;);
 						Button</span>
 				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
 					class="tridem_light radcorn flip gradient_split_diag_blue gradient">
+						Button</span>
+				<br />
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_diag_yellow gradient">
+						Button</span>
+				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
+					class="tridem_light radcorn flip gradient_split_diag_yellow gradient">
 						Button</span>
 				<br />
 				<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
@@ -240,6 +282,9 @@ print(&quot;&lt;br&gt;Total Surfer Votes: $x&quot;);
 				
 				
 			</div>
+			
+			
+			
 			<footer class="footer" role="contentinfo">
 				<div id="inner-footer" class="wrap clearfix">
 					<nav role="navigation">
@@ -250,10 +295,32 @@ print(&quot;&lt;br&gt;Total Surfer Votes: $x&quot;);
 			<span class="hidden" id="eof-scripts">
 				<!-- A Place for all the eof js -->
 				
+				<!--[if lt IE 9]>
+				<script type="text/javascript" 
+					src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+				
+				<script>
+					CFInstall.check({
+						mode: "overlay"
+					});
+				</script>
+				<![endif]-->
 			</span>
+			</div>
 		</div>
 	</body>
 </html>
 
 <?php
 // The header of the page
+
+
+
+
+
+
+
+
+
+
+
