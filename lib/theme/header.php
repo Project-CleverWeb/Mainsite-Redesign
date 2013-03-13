@@ -62,7 +62,6 @@
 		<![endif]-->
 		<!--[if lt IE 9]>
 			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-			<script src="//css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
 		<![endif]-->
 		<!--[if gte IE 9]>
 			<style type="text/css">
@@ -84,10 +83,10 @@
 		<script type="text/javascript" src="//apis.google.com/js/plusone.js"></script>
 		<script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 		<!-- Older versions of IE dont like the highlighter so leave it out then -->
-		<!--[if !gte IE 9]> -->
+		<![if !IE]>
 			<script type="text/javascript" src="./lib/theme/lib/js/highlight.js/highlight.pack.js"></script>
 			<script>hljs.initHighlightingOnLoad();</script>
-		<!--<![endif]-->
+		<![endif]>
 	</head>
 	<body>
 		
@@ -103,9 +102,10 @@
 							</object>
 						<nav>
 							<ul>
-								<li><a href="#">nav ul li a</a></li>
-								<li><a href="#">nav ul li a</a></li>
-								<li><a href="#">nav ul li a</a></li>
+								<li><a class="here" href="#">Home</a></li>
+								<li><a href="#">About</a></li>
+								<li><a href="#">Contact</a></li>
+								<li><a href="#">Support Us</a></li>
 							</ul>
 						</nav>
 					</header>
@@ -120,14 +120,32 @@
 						
 						<article>
 							<header>
+								<span class="test-title">### HEADERS ###</span><br />
 								<h1>The Header <a href="#">#</a> 1</h1>
 								<h2>The Header <a href="#">#</a> 2</h2>
 								<h3>The Header <a href="#">#</a> 3</h3>
 								<h4>The Header <a href="#">#</a> 4</h4>
 								<h5>The Header <a href="#">#</a> 5</h5>
 								<h6>The Header <a href="#">#</a> 6</h6>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec.</p>
-								<pre class="radcorn gradient_horz_white gradient"><code>&lt;?php
+								
+								<span class="test-title">### TEXT ###</span><br />
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed harum reprehenderit nemo doloribus earum dolor rerum adipisci optio voluptatibus quaerat quasi odit possimus asperiores atque sint maxime excepturi facilis soluta ex ea saepe aliquam provident incidunt doloremque unde quia similique!</p>
+								
+								<p>
+									<i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed harum reprehenderit nemo doloribus earum dolor rerum adipisci optio voluptatibus quaerat quasi odit possimus asperiores atque sint maxime excepturi facilis soluta ex ea saepe aliquam provident incidunt doloremque unde quia similique!</i>
+								</p>
+								
+								<p>
+									<b>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed harum reprehenderit nemo doloribus earum dolor rerum adipisci optio voluptatibus quaerat quasi odit possimus asperiores atque sint maxime excepturi facilis soluta ex ea saepe aliquam provident incidunt doloremque unde quia similique!</b>
+								</p>
+								
+								<p>
+									<i><b>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed harum reprehenderit nemo doloribus earum dolor rerum adipisci optio voluptatibus quaerat quasi odit possimus asperiores atque sint maxime excepturi facilis soluta ex ea saepe aliquam provident incidunt doloremque unde quia similique!</b></i>
+								</p>
+								
+								
+								<span class="test-title">### CODE ###</span><br />
+								<pre><code>&lt;?php
 $path = &quot;/YOUR/PATH/TO/public_html/php_diary/data&quot;;
 $filename = &quot;122499.dat&quot;;
 $x= -1;
@@ -148,7 +166,7 @@ print(&quot;&lt;br&gt;Total Surfer Votes: $x&quot;);
 ?&gt;</code></pre>
 							</header>
 							<section>
-								<h2>article section h2</h2>
+								<span class="test-title">### FORM ###</span><br />
 								<form action="" method="post">
 									Name: <input type="text" name="name" placeholder="John Doe" value="" maxlength="50" /><br />
 									Email: <input type="text" name="email" value="" placeholder="me@example.com" maxlength="50" /><br />
@@ -163,13 +181,8 @@ print(&quot;&lt;br&gt;Total Surfer Votes: $x&quot;);
 									<input type="checkbox" name="chk" value="" checked/> Check Me!<br />
 									<div class="align_r"><input type="submit" value="Submit This Form"></div>
 								</form>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
-							</section>
-							<section>
-								<h2>article section h2</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
-							</section>
 							<footer>
+								<!--
 								<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
 									class="tridem_light radcorn flip gradient_grey gradient">
 										Button</span>
@@ -268,11 +281,12 @@ print(&quot;&lt;br&gt;Total Surfer Votes: $x&quot;);
 										Button</span>
 								<span style="padding:50px 100px 50px 100px; line-height: 130px;margin: 5px;"
 									class="tridem_light radcorn flip gradient_split_diag_grey gradient">
-										Button</span>
+										Button</span> -->
 							</footer>
 						</article>
 
 						<aside>
+							<span class="test-title">### ASIDE ###</span><br />
 							<p>
 								<table>
 									<tr>
@@ -289,6 +303,7 @@ print(&quot;&lt;br&gt;Total Surfer Votes: $x&quot;);
 							</p>
 						</aside>
 						<aside>
+							<span class="test-title">### ASIDE ###</span><br />
 							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales urna non odio egestas tempor. Nunc vel vehicula ante. Etiam bibendum iaculis libero, eget molestie nisl pharetra in. In semper consequat est, eu porta velit mollis nec. Curabitur posuere enim eget turpis feugiat tempor. Etiam ullamcorper lorem dapibus velit suscipit ultrices. Proin in est sed erat facilisis pharetra.</p>
 						</aside>
 
